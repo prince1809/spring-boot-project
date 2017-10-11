@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.princekr.boot</groupId>
+    <artifactId>spring-boot-dependencies</artifactId>
+    <version>1.5.6.RELEASE</version>
+    <packaging>pom</packaging>
+    <name>Spring Boot Dependencies</name>
+    <description>Spring Boot Dependencies</description>
+    <url>http://projects.spring.io/spring-boot/</url>
+    <organization>
+        <name>Pivotal Software, Inc.</name>
+        <url>htt://www.spring.io</url>
+    </organization>
+    <licenses>
+        <license>
+            <name>Apache Licence, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+    </licenses>
+    <scm>
+        <url>http://github.com/spring-projects/spring-boot</url>
+    </scm>
+    <developers>
+        <developer>
+            <id>pwebb</id>
+            <name>Phillip Webb</name>
+            <email>pwebb at pivotal.io</email>
+            <organization>Pivotal Software, Inc.</organization>
+            <organizationUrl>http://www.spring.io</organizationUrl>
+            <roles>
+                <role>Project lead</role>
+            </roles>
+        </developer>
+        <developer>
+            <id>dsyer</id>
+            <name>Dave Syer</name>
+            <email>dsyer at pivotal.io</email>
+            <organization>Pivotal Software, Inc.</organization>
+            <organizationUrl>http://www.spring.io</organizationUrl>
+            <roles>
+                <role>Project lead</role>
+            </roles>
+        </developer>
+    </developers>
+    <properties>
+        <!-- Dependency versions -->
+        <activemq.version>5.14.5</activemq.version>
+    </properties>
+    
+</project>

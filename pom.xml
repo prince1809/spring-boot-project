@@ -76,6 +76,7 @@
             </activation>
             <modules>
                 <module>spring-boot-dependencies</module>
+                <module>spring-boot-parent</module>
             </modules>
         </profile>
     </profiles>

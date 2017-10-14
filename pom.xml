@@ -1,89 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.princekr.boot</groupId>
     <artifactId>spring-boot-build</artifactId>
-    <version>1.5.6.RELEASE</version>
+    <version>${revision}</version>
     <packaging>pom</packaging>
     <name>Spring Boot Build</name>
     <description>Spring Boot Build</description>
-    <url>http://projects.spring.io/spring-boot/</url>
-    <organization>
-        <name>Pivotal Software, Inc.</name>
-        <url>http://www.spring.io</url>
-    </organization>
-    <licenses>
-        <license>
-            <name>Apache License, Version 2.0</name>
-            <url>http://wwww.apache.org/licenses/LICENSE-2.0</url>
-        </license>
-    </licenses>
-    <scm>
-        <url>https://githu.com/spring-projects/spring-boot</url>
-    </scm>
-    <developers>
-        <developer>
-            <id>pwebb</id>
-            <name>Phillip Webb</name>
-            <email>pwebb at pivotal.io</email>
-            <organization>Pivotal Software, Inc.</organization>
-            <organizationUrl>http://www.spring.io</organizationUrl>
-            <roles>
-                <role>Project lead</role>
-            </roles>
-        </developer>
-        <developer>
-            <id>dsyer</id>
-            <name>Dave Syer</name>
-            <email>dsyer at pivotal.io</email>
-            <organization>Pivotal Software, Inc.</organization>
-            <organizationUrl>http://www.spring.io</organizationUrl>
-            <roles>
-                <role>Project lead</role>
-            </roles>
-        </developer>
-    </developers>
     <properties>
+        <revision>2.0.0.BUILD-SNAPSHOT</revision>
         <main.basedir>${basedir}</main.basedir>
     </properties>
-    <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-antrun-plugin</artifactId>
-                    <version>1.7</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-surefire-plugin</artifactId>
-                    <version>2.17</version>
-                </plugin>
-                <plugin>
-                    <groupId>com.google.code.maven-replacer-plugin</groupId>
-                    <artifactId>replacer</artifactId>
-                    <version>1.5.3</version>
-                </plugin>
-
-            </plugins>
-        </pluginManagement>
-    </build>
+    <!-- Most elements are in profiles so they are stripped out during maven-flatten -->
     <profiles>
+        <!-- Default profile for command line build -->
         <profile>
             <id>default</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
             <modules>
-                <module>spring-boot-dependencies</module>
-                <module>spring-boot-parent</module>
+                <module>spring-boot-project</module>
+                <!-- Samples are built via the invoker plugin -->
+                <module>spring-boot-samples-invoker</module>
+                <module>spring-boot-tests</module>
             </modules>
+        </profile>
+        <!-- M2E profile to allow easy import into Eclipse -->
+        <profile>
+            <id>m2e</id>
+            <activation>
+                <property>
+                    <name>m2e.version</name>
+                </property>
+            </activation>
+            <modules>
+                <module>spring-boot-project</module>
+                <module>spring-boot-samples</module>
+                <module>spring-boot-tests</module>
+            </modules>
+        </profile>
+        <profile>
+            <id>repository</id>
+            <activation>
+                <property>
+                    <name>repository</name>
+                </property>
+            </activation>
+            <repositories>
+                <repository>
+                    <id>repository</id>
+                    <url>${repository}</url>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>repository</id>
+                    <url>${repository}</url>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </pluginRepository>
+            </pluginRepositories>
         </profile>
     </profiles>
     <repositories>
+        <!-- Repositories to allow snapshot and milestone BOM imports during development.
+        This section is stripped by the flatten plugin during install/deploy. -->
         <repository>
             <id>central</id>
             <url>http://repo1.maven.org/maven2/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>spring-milestone</id>
+            <name>Spring Milestone</name>
+            <url>http://repo.spring.io/milestone</url>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
@@ -99,7 +97,7 @@
         <repository>
             <id>rabbit-milestone</id>
             <name>Rabbit Milestone</name>
-            <url>htts://dl.bintray.com/rabbitmq/maven-milestones</url>
+            <url>https://dl.bintray.com/rabbitmq/maven-milestones</url>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
@@ -118,11 +116,12 @@
             <name>Spring Milestone</name>
             <url>http://repo.spring.io/milestone</url>
             <snapshots>
-                <enabled>false</enabled>
+                <enabled>true</enabled>
             </snapshots>
         </pluginRepository>
         <pluginRepository>
             <id>spring-snapshot</id>
+            <name>spring-snapshot</name>
             <url>http://repo.spring.io/snapshot</url>
             <snapshots>
                 <enabled>true</enabled>

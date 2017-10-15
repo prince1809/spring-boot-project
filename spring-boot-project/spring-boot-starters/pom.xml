@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <parent>
         <groupId>com.princekr.boot</groupId>
-        <artifactId>spring-boot-project</artifactId>
+        <artifactId>spring-boot-parent</artifactId>
         <version>${revision}</version>
+        <relativePath>../spring-boot-parent</relativePath>
     </parent>
     <artifactId>spring-boot-starters</artifactId>
-
-    
+    <packaging>pom</packaging>
+    <name>Spring Boot Starters</name>
+    <description>Spring Boot Starters</description>
+    <properties>
+        <main.basedir>${basedir}/../..</main.basedir>
+    </properties>
+    <modules>
+        <module>spring-boot-starter</module>
+        <module>spring-boot-starter-activemq</module>
+        <module>spring-boot-starter-amqp</module>
+        <module>spring-boot-starter-aop</module>
+        <module>spring-boot-starter-artemis</module>
+        <module>spring-boot-starter-batch</module>
+        <module>spring-boot-starter-cache</module>
+        <module>spring-boot-starter-cloud-connectors</module>
+        <module>spring-boot-starter-data-cassandra</module>
+    </modules>
 </project>

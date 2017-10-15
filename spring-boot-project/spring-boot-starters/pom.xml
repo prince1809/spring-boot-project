@@ -34,5 +34,18 @@
         <module>spring-boot-starter-data-mongodb-reactive</module>
         <module>spring-boot-starter-data-neo4j</module>
         <module>spring-boot-starter-data-redis</module>
+        <module>spring-boot-starter-data-rest</module>
+        <module>spring-boot-starter-data-solr</module>
+        <module>spring-boot-starter-freemarker</module>
+        <module>spring-boot-starter-groovy-templates</module>
+        <module>spring-boot-starter-hateoas</module>
+        <module>spring-boot-starter-integration</module>
+        <module>spring-boot-starter-jdbc</module>
+        <module>spring-boot-starter-jersey</module>
+        <module>spring-boot-starter-jetty</module>
+        <module>spring-boot-starter-jooq</module>
+        <module>spring-boot-starter-json</module>
+        <module>spring-boot-starter-jta-atomikos</module>
+        <module>spring-boot-starter-jta-bitronix</module>
     </modules>
 </project>

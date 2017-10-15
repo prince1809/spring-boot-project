@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.princekr.boot</groupId>
+        <artifactId>spring-boot-dependencies</artifactId>
+        <version>${revision}</version>
+        <relativePath>../../spring-boot-dependencies</relativePath>
+    </parent>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <packaging>pom</packaging>
+    <name>Spring Boot Starter Parent</name>
+    <description>Parent pom providing dependency and plugin management for applications
+        built with Maven</description>
+    <properties>
+        <java.version>1.8</java.version>
+        <resource.delimiter>@</resource.delimiter> <!-- delimiter that doesn't clash with Spring ${} placeholders -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+    </properties>
+
+    
+</project>

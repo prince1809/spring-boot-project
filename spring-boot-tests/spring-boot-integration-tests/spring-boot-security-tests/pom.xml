@@ -4,21 +4,17 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.princekr.boot</groupId>
-        <artifactId>spring-boot-parent</artifactId>
+        <artifactId>spring-boot-integration-tests</artifactId>
         <version>${revision}</version>
-        <relativePath>../spring-boot-project/spring-boot-parent</relativePath>
     </parent>
-    <artifactId>spring-boot-tests</artifactId>
+    <artifactId>spring-boot-security-tests</artifactId>
     <packaging>pom</packaging>
-    <name>Spring Boot Tests</name>
-    <description>Spring Boot Tests</description>
+    <name>Spring Boot Security Tests</name>
+    <description>${project.name}</description>
     <properties>
-        <main.basedir>${basedir}/..</main.basedir>
+        <main.basedir>${basedir}/../../..</main.basedir>
     </properties>
-    <modules>
-        <!-- Deployment tests are slow so don't include by default -->
-        <module>spring-boot-integration-tests</module>
-    </modules>
+
 
     
 </project>

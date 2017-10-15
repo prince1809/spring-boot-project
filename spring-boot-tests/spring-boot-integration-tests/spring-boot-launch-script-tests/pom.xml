@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.princekr.boot</groupId>
+        <artifactId>spring-boot-integration-tests</artifactId>
+        <version>${revision}</version>
+    </parent>
+    <artifactId>spring-boot-launch-script-tests</artifactId>
+    <packaging>jar</packaging>
+    <name>Spring Boot Launch Script Integration Tests</name>
+    <description>${project.name}</description>
+    <properties>
+        <main.basedir>${basedir}/../../..</main.basedir>
+        <jersey.version>2.11</jersey.version>
+    </properties>
+</project>

@@ -25,5 +25,14 @@
         <module>spring-boot-starter-cache</module>
         <module>spring-boot-starter-cloud-connectors</module>
         <module>spring-boot-starter-data-cassandra</module>
+        <module>spring-boot-starter-data-cassandra-reactive</module>
+        <module>spring-boot-starter-data-couchbase</module>
+        <module>spring-boot-starter-elasticsearch</module>
+        <module>spring-boot-starter-data-jpa</module>
+        <module>spring-boot-starter-data-ldap</module>
+        <module>spring-boot-starter-data-mongodb</module>
+        <module>spring-boot-starter-data-mongodb-reactive</module>
+        <module>spring-boot-starter-data-neo4j</module>
+        <module>spring-boot-starter-data-redis</module>
     </modules>
 </project>

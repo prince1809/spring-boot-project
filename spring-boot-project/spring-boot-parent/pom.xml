@@ -64,14 +64,14 @@
                 <version>3.4.1</version>
             </dependency>
             <dependency>
-                <groupId>com.vaading.external.google</groupId>
+                <groupId>com.vaadin.external.google</groupId>
                 <artifactId>android-json</artifactId>
                 <version>0.0.20131108.vaadin1</version>
             </dependency>
             <dependency>
                 <groupId>io.spring.gradle</groupId>
                 <artifactId>dependency-management-plugin</artifactId>
-                <version>1.0.3-RELEASE</version>
+                <version>1.0.3.RELEASE</version>
             </dependency>
             <dependency>
                 <groupId>jline</groupId>

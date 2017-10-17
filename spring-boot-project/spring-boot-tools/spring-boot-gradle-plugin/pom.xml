@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.princekr.boot</groupId>
+        <artifactId>spring-boot-tools</artifactId>
+        <version>${revision}</version>
+    </parent>
+    <artifactId>spring-boot-gradle-plugin</artifactId>
+    <packaging>pom</packaging>
+    <name>Spring Boot Gradle Plugin</name>
+    <description>Spring Boot Gradle Plugin</description>
+    <properties>
+        <main.basedir>${basedir}/../../..</main.basedir>
+        <gradle.executable>./gradlew</gradle.executable>
+        <gradle.task>build</gradle.task>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>com.princekr.boot</groupId>
+            <artifactId>spring-boot-loader-tools</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.spring.gradle</groupId>
+            <artifactId>dependency-management-plugin</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-compress</artifactId>
+        </dependency>
+    </dependencies>
+
+    
+</project>

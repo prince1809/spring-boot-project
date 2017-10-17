@@ -265,7 +265,7 @@
                 <version>${revision}</version>
             </dependency>
             <dependency>
-                <groupId>org.springframework.boot</groupId>
+                <groupId>com.princekr.boot</groupId>
                 <artifactId>spring-boot-loader-tools</artifactId>
                 <version>${revision}</version>
             </dependency>

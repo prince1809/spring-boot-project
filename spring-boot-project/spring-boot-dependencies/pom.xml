@@ -210,12 +210,12 @@
         <dependencies>
             <!-- Spring Boot -->
             <dependency>
-                <groupId>org.princekr.boot</groupId>
+                <groupId>com.princekr.boot</groupId>
                 <artifactId>spring-boot</artifactId>
                 <version>${revision}</version>
             </dependency>
             <dependency>
-                <groupId>org.princekr.boot</groupId>
+                <groupId>com.princekr.boot</groupId>
                 <artifactId>spring-boot-test</artifactId>
                 <version>${revision}</version>
             </dependency>
@@ -225,42 +225,42 @@
                 <version>${revision}</version>
             </dependency>
             <dependency>
-                <groupId>org.princekr.boot</groupId>
+                <groupId>com.princekr.boot</groupId>
                 <artifactId>spring-boot-actuator</artifactId>
                 <version>${revision}</version>
             </dependency>
             <dependency>
-                <groupId>org.princekr.boot</groupId>
+                <groupId>com.princekr.boot</groupId>
                 <artifactId>spring-boot-actuator-autoconfigure</artifactId>
                 <version>${revision}</version>
             </dependency>
             <dependency>
-                <groupId>org.springframework.boot</groupId>
+                <groupId>com.princekr.boot</groupId>
                 <artifactId>spring-boot-autoconfigure</artifactId>
                 <version>${revision}</version>
             </dependency>
             <dependency>
-                <groupId>org.princekr.boot</groupId>
+                <groupId>com.princekr.boot</groupId>
                 <artifactId>spring-boot-autoconfigure-processor</artifactId>
                 <version>${revision}</version>
             </dependency>
             <dependency>
-                <groupId>org.princekr.boot</groupId>
+                <groupId>com.princekr.boot</groupId>
                 <artifactId>spring-boot-configuration-metadata</artifactId>
                 <version>${revision}</version>
             </dependency>
             <dependency>
-                <groupId>org.princekr.boot</groupId>
+                <groupId>com.princekr.boot</groupId>
                 <artifactId>spring-boot-configuration-processor</artifactId>
                 <version>${revision}</version>
             </dependency>
             <dependency>
-                <groupId>org.princekr.boot</groupId>
+                <groupId>com.princekr.boot</groupId>
                 <artifactId>spring-boot-devtools</artifactId>
                 <version>${revision}</version>
             </dependency>
             <dependency>
-                <groupId>org.princekr.boot</groupId>
+                <groupId>com.princekr.boot</groupId>
                 <artifactId>spring-boot-loader</artifactId>
                 <version>${revision}</version>
             </dependency>

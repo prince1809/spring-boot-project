@@ -225,7 +225,7 @@
                 <version>${spock.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.zeroturnarround</groupId>
+                <groupId>org.zeroturnaround</groupId>
                 <artifactId>zt-zip</artifactId>
                 <version>1.7</version>
             </dependency>

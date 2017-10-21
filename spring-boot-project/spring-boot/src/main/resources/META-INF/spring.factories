@@ -1,0 +1,4 @@
+# PropertySource Loaders
+com.princekr.boot.env.PropertySourceLoader=\
+com.princekr.boot.env.PropertiesPropertySourceLoader,\
+com.princekr.boot.env.YamlPropertySourceLoader

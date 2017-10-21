@@ -4,9 +4,52 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.princekr.boot</groupId>
-        <artifactId>spring-boot-project</artifactId>
+        <artifactId>spring-boot-parent</artifactId>
         <version>${revision}</version>
+        <relativePath>../spring-boot-parent</relativePath>
     </parent>
     <artifactId>spring-boot-autoconfigure</artifactId>
+    <name>Spring Boot Autoconfigure</name>
+    <description>Spring Boot Autoconfigure</description>
+    <properties>
+        <main.basedir>${basedir}/../..</main.basedir>
+    </properties>
+    <dependencies>
+        <!-- compile -->
+        <dependency>
+            <groupId>com.princekr.boot</groupId>
+            <artifactId>spring-boot</artifactId>
+        </dependency>
+        <!-- Optional -->
+        <dependency>
+            <groupId>com.atomikos</groupId>
+            <artifactId>transactions-jdbc</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>com.atomikos</groupId>
+            <artifactId>transactions-jta</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>com.couchbase.client</groupId>
+            <artifactId>couchbase-spring-cache</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-xml</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-joda</artifactId>
+        </dependency>
+    </dependencies>
     
 </project>

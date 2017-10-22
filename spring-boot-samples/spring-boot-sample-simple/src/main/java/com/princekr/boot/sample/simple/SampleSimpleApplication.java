@@ -1,6 +1,7 @@
 package com.princekr.boot.sample.simple;
 
 import com.princekr.boot.CommandLineRunner;
+import com.princekr.boot.SpringApplication;
 import com.princekr.boot.autoconfigure.SpringBootApplication;
 import com.princekr.boot.sample.simple.service.HelloWorldService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,6 @@ public class SampleSimpleApplication implements CommandLineRunner {
     }
 
     public static void main(String[] args) throws Exception {
-
+        SpringApplication.run(SampleSimpleApplication.class, args);
     }
 }

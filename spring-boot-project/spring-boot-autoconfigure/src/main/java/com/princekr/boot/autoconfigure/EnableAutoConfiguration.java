@@ -1,5 +1,7 @@
 package com.princekr.boot.autoconfigure;
 
+import org.springframework.context.annotation.Import;
+
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Inherited;
@@ -19,6 +21,23 @@ import java.lang.annotation.Target;
 @Documented
 @Inherited
 @AutoConfigurationPackage
+@Import(AutoConfigurationImportSelector.class)
 public @interface EnableAutoConfiguration {
 
+    String ENABLED_OVERRIDE_PROPERTY = "spring.boot.enableautoconfiguration";
+
+    /**
+     * Exclude specific auto-configuration classes such that they will never be applied.
+     *
+     * @return the classes to exclude
+     */
+    Class<?>[] exclude() default {};
+
+    /**
+     * Exclude specific auto-configuration class names such that they will never be
+     * applied.
+     *
+     * @return the class names to exclude
+     */
+    String[] excludeName() default {};
 }

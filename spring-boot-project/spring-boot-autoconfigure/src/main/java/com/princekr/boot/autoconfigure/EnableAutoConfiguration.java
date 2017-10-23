@@ -14,7 +14,7 @@ import java.lang.annotation.Target;
  * configure beans that you are likely to need. Auto-configuration classes are usually
  * applied based on your classpath and what beans you have defined. For example, if you
  * have {@code tomcat-embedded.jar} on your classpath you are likely to want a
- * {@link}
+ * {@link }
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)

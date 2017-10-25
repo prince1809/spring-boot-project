@@ -2,15 +2,19 @@ package com.princekr.boot.web.embedded.tomcat;
 
 import com.princekr.boot.web.server.WebServer;
 import com.princekr.boot.web.server.WebServerException;
+import org.apache.catalina.Container;
 import org.apache.catalina.Context;
+import org.apache.catalina.Engine;
 import org.apache.catalina.LifecycleException;
 import org.apache.catalina.Service;
 import org.apache.catalina.connector.Connector;
 import org.apache.catalina.startup.Tomcat;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.apache.naming.ContextBindings;
 import org.springframework.util.Assert;
 
+import javax.naming.NamingException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -62,25 +66,68 @@ public class TomcatWebServer implements WebServer {
     private void initialize() throws WebServerException {
         TomcatWebServer.logger.info("Tomcat initialized with port(s): " + getPortsDescription(false));
         synchronized (this.monitor) {
+            try {
+                addInstanceIdToEngineName();
 
+                // Remove service connectors so that protocol binding doesn't happen yet
+                removeServiceConnectors();
+
+                this.tomcat.start();
+
+                // We can re-throw failure exception directly in the main thread
+                rethrowDeferredStartupException();
+
+                Context context = findContext();
+
+                try {
+                    ContextBindings.bindClassLoader(context, context.getNamingToken(), getClass().getClassLoader());
+                } catch (NamingException ex) {
+                    // Naming is not enabled. Continue
+                }
+
+                // Unlike Jetty, all Tomcat threads are daemon threads. We create a
+                // blocking non-daemon to stop immediate shutdown
+                startDaemonAwaitThread();
+
+            } catch (Exception ex) {
+                throw new WebServerException("Unable to start embedded Tomcat", ex);
+            }
         }
 
     }
 
     private Context findContext() {
-        return null;
+        for (Container child : this.tomcat.getHost().findChildren()) {
+            if (child instanceof Context) {
+                return (Context) child;
+            }
+        }
+        throw new IllegalStateException("The host does not contain a context");
     }
 
     private void addInstanceIdToEngineName() {
-
+        int instanceId = containerCounter.incrementAndGet();
+        if (instanceId > 0) {
+            Engine engine = this.tomcat.getEngine();
+            engine.setName(engine.getName() + "-" + instanceId);
+        }
     }
 
     private void removeServiceConnectors() {
-
+        for (Service service : this.tomcat.getServer().findServices()) {
+            Connector[] connectors = service.findConnectors().clone();
+            this.serviceConnectors.put(service, connectors);
+            for (Connector connector : connectors) {
+                service.removeConnector(connector);
+            }
+        }
     }
 
     private void rethrowDeferredStartupException() throws Exception {
-
+        Container[] children = this.tomcat.getHost().findChildren();
+        for (Container container : children) {
+            //if (container instanceof Tomcat)
+        }
     }
 
     private void startDaemonAwaitThread() {

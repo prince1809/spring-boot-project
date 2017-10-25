@@ -1,0 +1,3 @@
+#Iinitializers
+org.springframework.context.ApplicationContextInitializer=\
+com.princekr.boot.autoconfigure.SharedMetadataReaderFactoryContextInitializer

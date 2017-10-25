@@ -24,7 +24,7 @@ import java.lang.annotation.Target;
 @Import(AutoConfigurationImportSelector.class)
 public @interface EnableAutoConfiguration {
 
-    String ENABLED_OVERRIDE_PROPERTY = "spring.boot.enableautoconfiguration";
+    String ENABLED_OVERRIDE_PROPERTY = "princekr.boot.enableautoconfiguration";
 
     /**
      * Exclude specific auto-configuration classes such that they will never be applied.
